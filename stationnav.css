@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.stations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.stations-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.station {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.progress-bar {
+  height: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #e8f5e9;
+  transition: background-color 0.3s ease;
+}
+
+.station-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.station-number {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.station-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.station-title h2 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Active state */
+.station.active .progress-bar {
+  background-color: #0a8a36;
+}
+
+.station:not(.active):hover .progress-bar {
+  background-color: #c8e6c9;
+}
+
+.content-area {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+.station-page {
+  display: none;
+}
+
+.station-page.active {
+  display: block;
+}
