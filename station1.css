@@ -1,0 +1,273 @@
+/*
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 30px);
+  grid-gap: 5px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  background: #aaa;
+  border: 1px solid #888;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.labels-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.label-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.color-box {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #888;
+}
+
+.color-box.colorblind {
+  background-color: #9eb9ff;
+}
+
+.color-box.blindness {
+  background-color: #333;
+}
+
+.instruction {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.faq {
+  margin: 30px 0;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  background: #5d4777;
+  color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '▼';
+  position: absolute;
+  right: 15px;
+  transition: transform 0.3s;
+  font-size: 12px;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  padding: 0 15px 15px;
+  line-height: 1.6;
+}
+
+.next {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 30px;
+  background: #00a651;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.next:hover {
+  background: #008c45;
+}
+
+body.protanopia {
+  filter: url('#protanopia');
+}
+
+body.tritanopia {
+  filter: url('#tritanopia');
+}
+
+body.achromatopsia {
+  filter: grayscale(100%);
+}
+
+.filters-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+*/
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.labels-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.label-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.color-box {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #888;
+}
+
+.colorblind {
+  background-color: #9eb9ff;
+}
+
+.blindness {
+  background-color: #333;
+}
+
+.instruction {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Seat Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 30px);
+  gap: 5px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  background: #4caf50;
+  border: 1px solid #888;
+  cursor: pointer;
+}
+
+.seat.reserved {
+  background: #f44336;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.filters label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Colorblind filters */
+#colorblindness-sim.protanopia {
+  filter: sepia(1) hue-rotate(300deg);
+}
+#colorblindness-sim.tritanopia {
+  filter: sepia(1) hue-rotate(180deg);
+}
+#colorblindness-sim.achromatopsia {
+  filter: grayscale(100%);
+}
+
+/* Blindness */
+.blindness-container {
+  position: relative;
+  background: white;
+  padding: 20px;
+}
+
+.blindness-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.blindness-hint {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  z-index: 20;
+  border-radius: 4px;
+}
