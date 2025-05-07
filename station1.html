@@ -8,8 +8,29 @@
     <title>Station 1</title>
 </head>
 <body>
-
-    <!-- Top Bar -->
+    <!-- SVG Filters for colorblindness simulation -->
+    <svg class="filters-svg">
+      <defs>
+          <filter id="protanopia-filter">
+              <feColorMatrix 
+                  type="matrix" 
+                  values="0.567, 0.433, 0,     0, 0
+                          0.558, 0.442, 0,     0, 0
+                          0,     0.242, 0.758, 0, 0
+                          0,     0,     0,     1, 0" />
+          </filter>
+          <filter id="tritanopia-filter">
+              <feColorMatrix 
+                  type="matrix" 
+                  values="0.95, 0.05,  0,     0, 0
+                          0,    0.433, 0.567, 0, 0
+                          0,    0.475, 0.525, 0, 0
+                          0,    0,     0,     1, 0" />
+          </filter>
+      </defs>
+    </svg>  
+  
+  <!-- Top Bar -->
     <div class="top-bar">
         <a href="station1.html" class="top-bar-link">
           <svg
@@ -92,6 +113,21 @@
             <h1>Visuele beperking</h1>
             <p>Deze mini-game laat je ervaren hoe het is om visuele beperkingen te hebben.</p>
       
+            <div class="labels-section">
+              <div class="label-item">
+                  <div class="seat" style="width: 20px; height: 20px; background: #6b8e23;"></div>
+                  <span>Beschikbaar</span>
+              </div>
+              <div class="label-item">
+                  <div class="seat" style="width: 20px; height: 20px; background: #4e6c3f;"></div>
+                  <span>Bezet</span>
+              </div>
+              <div class="label-item">
+                  <div class="seat" style="width: 20px; height: 20px; background: #3a5271;"></div>
+                  <span>Geselecteerd</span>
+              </div>
+            </div>
+
             <!-- Seats -->
             <div class="grid" id="seatGrid"></div>
       
