@@ -103,11 +103,13 @@ function resetGameState() {
   if (currentGame === "Cerebrale") {
     subtitle.textContent =
       "Tijdens het selecteren van de verschillende invulvakken beweegt je muis alle kanten op.";
-    title.textContent = "Ervaar hoe het is om een Cerebrale Parese te hebben";
+    title.textContent =
+      "Ervaar hoe het voelt om een aandoening te hebben die het moeilijk maakt om je muis te bedienen. (Cerebrale Parese)";
   } else {
     subtitle.textContent =
       "Tijdens het typen in de invulvakken verschijnen er random letters, waardoor het moeilijker is om te typen.";
-    title.textContent = "Ervaar hoe het is om Multiple Sclerose te hebben";
+    title.textContent =
+      "Ervaar hoe het voelt om een aandoening te hebben die het moeilijk maakt om te typen. (Multiple Sclerose)";
   }
 }
 
