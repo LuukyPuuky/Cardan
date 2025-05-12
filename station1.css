@@ -32,7 +32,7 @@
 .seat {
   width: 100%;
   aspect-ratio: 1;
-  background: #6b8e23; /* For available */
+  background: #FFCC00; /* For available */
   border: 1px solid #888;
   border-radius: 5px;
   cursor: pointer;
@@ -43,6 +43,7 @@
 .seat:hover {
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: default;
 }
 
 .seat:focus {
@@ -51,12 +52,12 @@
 }
 
 .seat.reserved {
-  background: #4e6c3f; /* For reserved */
-  cursor: not-allowed;
+  background: #003366; /* For reserved */
+  cursor: default;
 }
 
 .seat.selected {
-  background: #3a5271; /* Green for selected */
+  background: #00ff48; /* Green for selected */
   border: 2px solid #333;
 }
 
@@ -242,6 +243,29 @@
 }
 
 .next:focus {
+  outline: 3px solid rgba(0, 166, 81, 0.4);
+}
+
+/* Reserve button */
+.reserveren {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background: #00a651;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reserveren:hover {
+  background: #008c45;
+}
+
+.reserveren:focus {
   outline: 3px solid rgba(0, 166, 81, 0.4);
 }
 
