@@ -43,8 +43,8 @@ function createStartButton() {
 }
 
 function initGame() {
-  tabs[0].classList.add("active");
-  setupTabs();
+  //   tabs[0].classList.add("active");
+  //   setupTabs();
   setupFormSectionTracking();
   setupInputFields();
   setupSendButton();
@@ -65,16 +65,21 @@ function startTimer() {
   }, 1000);
 }
 
-function setupTabs() {
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      currentGame = index === 0 ? "Cerebrale" : "multipleSclerosis";
-      resetGameState();
-    });
-  });
-}
+// function setupTabs() {
+//   tabs.forEach((tab, index) => {
+//     tab.addEventListener("click", () => {
+// Set the current game based on the tab clicked
+//   currentGame = index === 0 ? "Cerebrale" : "multipleSclerosis";
+
+// Update the tab UI
+//   tabs.forEach((t) => t.classList.remove("active"));
+//   tab.classList.add("active");
+
+// Reset the game state when switching tabs
+//       resetGameState();
+//     });
+//   });
+// }
 
 function resetGameState() {
   if (simulationStarted) {
