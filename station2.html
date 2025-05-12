@@ -65,48 +65,33 @@
             
             <p>Deze simulatie laat je ervaren hoe het is om te horen met een auditieve beperking.</p>
             
-            <div class="audio-player-container">
-                <div class="audio-options">
-                    <button class="audio-option active">Muziek</button>
-                    <button class="audio-option">Vogels</button>
-                    <button class="audio-option">Gesprek</button>
-                </div>
-                
-                <div class="audio-player">
-                    <div class="audio-controls">
-                        <button class="play-button">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 5.14v13.72a.5.5 0 0 0 .77.42l10-6.86a.5.5 0 0 0 0-.84l-10-6.86a.5.5 0 0 0-.77.42z" fill="currentColor"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="audio-progress">
-                        <div class="progress-bar"></div>
-                    </div>
-                </div>
+            <div class="tabs">
+                <div class="tab active" data-tab="1">Normal Video</div>
+                <div class="tab" data-tab="2">Hearing Loss</div>
+                <div class="tab" data-tab="3">Hearing Loss + Subtitles</div>
             </div>
 
-            <!-- Hearing Level Slider -->
-            <div class="hearing-level-container">
-                <div class="hearing-level-slider">
-                    <div class="slider-track"></div>
-                    <div class="slider-points">
-                        <div class="slider-point"></div>
-                        <div class="slider-point"></div>
-                        <div class="slider-point"></div>
-                        <div class="slider-point"></div>
-                        <div class="slider-point"></div>
-                    </div>
-                </div>
-                <div class="hearing-level-labels">
-                    <div class="hearing-level-label">Normaal gehoor</div>
-                    <div class="hearing-level-label">Milde beperking</div>
-                    <div class="hearing-level-label">Matige beperking</div>
-                    <div class="hearing-level-label">Ernstige beperking</div>
-                    <div class="hearing-level-label">Doof</div>
-                </div>
+            <div class="tab-content active" id="tab-1">
+                <video controls>
+                    <source src="station2-video/cvideo-normal.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
+            <div class="tab-content" id="tab-2">
+                <video controls>
+                    <source src="station2-video/cvideo-with-disability.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="tab-content" id="tab-3">
+                <video controls>
+                    <source src="station2-video/cvideo-with-subtitle-and-disability.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
             <br>
             
             <div class="info-panel">
