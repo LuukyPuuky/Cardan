@@ -145,18 +145,19 @@
 
     <div id="cursor"></div>
     <div class="container">
-      <h1>Ervaar hoe het is om een Cerbrale Parese te hebben</h1>
+      <button id="simulatiebutton" class="simulatiebutton"></button>
+      <h1 class="title">Ervaar hoe het is om een Cerbrale Parese te hebben</h1>
       <p class="subtitle">
         Tijdens het selecteren van de verschillende invulvakken beweegt je muis
         alle kanten op.
       </p>
 
       <div class="tabs">
-        <div class="tab active">Cerbrale Parese</div>
-        <div class="tab inactive">Multiple Sclerose</div>
+        <div class="tab">Cerbrale Parese</div>
+        <div class="tab">Multiple Sclerose</div>
       </div>
 
-      <div class="tijd" id="tijd">Tijd: 00:00</div>
+      <div class="tijd" id="tijd"></div>
 
       <div class="main-content">
         <!-- Form Section -->
@@ -286,21 +287,5 @@
     </div>
   </body>
 
-  <script>
-    const infoCards = document.querySelectorAll(".info-card");
-
-    function dropdown() {
-      infoCards.forEach((card) => {
-        card.addEventListener("click", () => {
-          card.classList.toggle("expanded");
-          const content = card.querySelector(".info-content");
-          const arrow = card.querySelector(".arrow");
-          content.classList.toggle("hidden");
-          arrow.classList.toggle("rotated");
-        });
-      });
-    }
-
-    dropdown();
-  </script>
+  <script src="station4script.js"></script>
 </html>

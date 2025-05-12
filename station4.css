@@ -20,6 +20,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 5rem;
 }
 
 h1 {
@@ -38,23 +39,27 @@ h1 {
 .tabs {
   margin-bottom: 20px;
   display: flex;
-  gap: 10px;
+  background-color: #e6f7ea;
+  max-width: fit-content;
+  padding: 0.5rem 0rem;
+  border-radius: 5px;
 }
 
 .tab {
-  padding: 8px 15px;
+  padding: 4px 14px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.tab:hover {
+  background-color: #c8e6c9;
+  color: #005700;
+  transition: background-color 0.3s ease;
 }
 
 .tab.active {
   background-color: #009b4d;
   color: white;
-}
-
-.tab.inactive {
-  background-color: #e0e0e0;
-  color: black;
 }
 
 .tijd {
@@ -130,6 +135,25 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.simulatiebutton {
+  background-color: #009b4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.simulatiebutton:hover {
+  background-color: #007a3d;
+}
+.simulatiebutton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .info-section {
