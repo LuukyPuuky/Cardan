@@ -6,6 +6,7 @@
     <title>Auditieve Beperking - Cardan</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="station2.css">
+    <link rel="stylesheet" href="stationnav.css">
 </head>
 <body>
 
@@ -56,6 +57,70 @@
         </div>
     </header>
 
+    <div class="stations-container">
+      <h1>Stations:</h1>
+      <nav class="stations-nav">
+        
+          <!-- Station 1 Visuele Beperking -->
+          <a href="station1.html" class="station active" data-station="1">
+              <div class="progress-bar"></div>
+              <div class="station-content">
+                  <div class="station-number">1</div>
+                  <div class="station-title">
+                      <h2>Visuele <br>beperking</h2>
+                  </div>
+              </div>
+          </a>
+
+          <!-- Station 2 Auditieve Beperking -->
+          <a href="station2.html" class="station" data-station="2">
+              <div class="progress-bar"></div>
+              <div class="station-content">
+                  <div class="station-number">2</div>
+                  <div class="station-title">
+                      <h2>Auditieve beperking</h2>
+                  </div>
+              </div>
+          </a>
+
+          <!-- Station 3 Cognitieve Beperking -->
+          <a href="station3.html" class="station" data-station="3">
+              <div class="progress-bar"></div>
+              <div class="station-content">
+                  <div class="station-number">3</div>
+                  <div class="station-title">
+                      <h2>Cognitieve beperking</h2>
+                  </div>
+              </div>
+          </a>
+
+          <!-- Station 4 Motorische Beperking -->
+          <a href="station4.html" class="station" data-station="4">
+              <div class="progress-bar"></div>
+              <div class="station-content">
+                  <div class="station-number">4</div>
+                  <div class="station-title">
+                      <h2>Motorische beperking</h2>
+                  </div>
+              </div>
+          </a>
+          
+          <!-- Station 5  Dyslexie Beperking -->
+          <a href="station5.html" class="station" data-station="5">
+              <div class="progress-bar"></div>
+              <div class="station-content">
+                  <div class="station-number">5</div>
+                  <div class="station-title">
+                      <h2>Dyslexie & kleurcontrast</h2>
+                  </div>
+              </div>
+          </a>
+      </nav>
+    </div>
+
+    <br>
+
+
     <!-- Main content -->
     <div class="main-content">
         <div class="container">
@@ -63,7 +128,7 @@
 
             <h1>Auditieve beperking ervaren</h1>
             
-            <p>Deze simulatie laat je ervaren hoe het is om te horen met een auditieve beperking.</p>
+            <p>Deze simulatie laat zien hoe iemand met een auditieve beperking een landingpagina filmpje kan ervaren, waarna je ook de oplossing kan bekijken in dit geval door middel van een ondertiteling.</p>
             
             <div class="tabs">
                 <div class="tab active" data-tab="1">Normal Video</div>
@@ -72,24 +137,39 @@
             </div>
 
             <div class="tab-content active" id="tab-1">
-                <video controls>
-                    <source src="station2-video/cvideo-normal.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="video-container">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1083457923?h=bcbd4cc693&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        title="cvideo-normal">
+                    </iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
 
             <div class="tab-content" id="tab-2">
-                <video controls>
-                    <source src="station2-video/cvideo-with-disability.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="video-container">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1083457947?h=d1e55faf20&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        title="hearing-loss">
+                    </iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
 
             <div class="tab-content" id="tab-3">
-                <video controls>
-                    <source src="station2-video/cvideo-with-subtitle-and-disability.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="video-container">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1083458193?h=3bfe8f4c97&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        title="hearing-loss-subtitles">
+                    </iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
             
             <br>
@@ -105,7 +185,6 @@
                 </div>
                 <div class="info-content">
                     <p>Doofheid en slechthorendheid zijn vormen van gehoorverlies. Het beperkt mensen in het waarnemen of het verwerken van geluid. Er zijn verschillende oorzaken en gradaties van doofheid. Bij slechthorendheid is het gehoor beperkt, maar door middel van een gehoorapparaat of implantaat kunnen veel slechthorenden voldoende horen.</p>
-                    <p>Door in deze simulatie verschillende geluiden uit het dagelijks leven te beluisteren, krijg je een beeld van hoe slechthorenden de wereld horen. Dit kan je helpen om beter te begrijpen wat de uitdagingen zijn waar slechthorenden dagelijks mee worstelen. Dit geldt ook voor gesprekken met anderen, waar het volgen van gesprekken, zeker in rumoerige omgevingen zoals café's of druk verkeer, extra uitdagend kan zijn.</p>
                 </div>
             </div>
             
@@ -113,7 +192,8 @@
         </div>
     </div>
 
-    <script src="station2.js"></script> 
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="station2.js"></script>
     
 </body>
 </html>
