@@ -1,4 +1,6 @@
-// Tab switching
+// Update the JavaScript to work with the new navigation buttons
+// Remove the old tab switching code
+/* Remove or comment out these lines: 
 document.getElementById('colorblindness-tab').addEventListener('click', () => {
     document.getElementById('colorblindness-sim').style.display = 'block';
     document.getElementById('blindness-sim').style.display = 'none';
@@ -8,14 +10,7 @@ document.getElementById('blindness-tab').addEventListener('click', () => {
     document.getElementById('colorblindness-sim').style.display = 'none';
     document.getElementById('blindness-sim').style.display = 'block';
 });
-
-// Filter simulation
-const colorblindnessSim = document.getElementById('colorblindness-sim');
-document.querySelectorAll('input[name="filter"]').forEach(input => {
-    input.addEventListener('change', (e) => {
-        colorblindnessSim.className = e.target.value !== 'none' ? e.target.value : '';
-    });
-});
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the seat grid
@@ -137,41 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Tab functionality
-    const colorblindTab = document.getElementById('colorblindness-tab');
-    const blindnessTab = document.getElementById('blindness-tab');
-    
-    colorblindTab.addEventListener('click', function() {
-        // Enable colorblindness mode
-        document.body.classList.remove('blindness-mode');
-        document.querySelectorAll('.blindness-overlay').forEach(el => el.remove());
-        // Enable filter selection
-        document.querySelector('.filters').style.display = 'flex';
-    });
-    
-    blindnessTab.addEventListener('click', function() {
-        // Enable blindness mode
-        document.body.classList.add('blindness-mode');
-        // Disable any color filters
-        document.body.classList.remove('protanopia', 'tritanopia', 'achromatopsia');
-        document.querySelectorAll('input[name="filter"]')[0].checked = true;
-        // Hide filter selection
-        document.querySelector('.filters').style.display = 'none';
-        
-        // Create blindness overlay if it doesn't exist
-        if (!document.querySelector('.blindness-overlay')) {
-            const overlay = document.createElement('div');
-            overlay.className = 'blindness-overlay';
-            document.querySelector('.main-content').appendChild(overlay);
-            
-            // Add hint text for blind users
-            const hint = document.createElement('div');
-            hint.className = 'blindness-hint';
-            hint.textContent = 'Gebruik tab en enter om door stoelen te navigeren';
-            document.querySelector('.main-content').appendChild(hint);
-        }
-    });
-    
     // Next button functionality
     const nextButton = document.querySelector('.next');
     nextButton.addEventListener('click', function() {
@@ -185,3 +145,166 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Add event listener to the Reserveren button
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the reserveren button
+    const reserveButton = document.querySelector('.reserveren');
+    
+    // Add event listener for the reserve button
+    if (reserveButton) {
+        reserveButton.addEventListener('click', function() {
+            // Check if there are any selected seats
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            
+            if (selectedSeats.length === 0) {
+                // Show error if no seats are selected
+                showErrorMessage('Selecteer eerst een stoel om te reserveren!');
+            } else {
+                // Show success popup if seats are selected
+                showSuccessPopup(selectedSeats.length);
+            }
+        });
+    }
+    
+    // Add a border around the minigame area
+    addBorderToMinigame();
+});
+
+// Function to show success popup
+function showSuccessPopup(seatCount) {
+    // Remove any existing popups
+    const existingPopup = document.querySelector('.success-popup, .error-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Create the popup
+    const popup = document.createElement('div');
+    popup.className = 'success-popup';
+    popup.innerHTML = `
+        <div class="popup-content success">
+            <h3>Succes!</h3>
+            <p>U heeft ${seatCount} stoel${seatCount !== 1 ? 'en' : ''} succesvol gereserveerd.</p>
+            <p>Bedankt voor uw reservering!</p>
+            <button class="close-popup">OK</button>
+        </div>
+    `;
+    
+    // Add to body
+    document.body.appendChild(popup);
+    
+    // Focus on the button for accessibility
+    setTimeout(() => {
+        popup.querySelector('.close-popup').focus();
+    }, 100);
+    
+    // Close button event
+    popup.querySelector('.close-popup').addEventListener('click', function() {
+        popup.remove();
+        
+        // Reset selected seats after successful reservation
+        document.querySelectorAll('.seat.selected').forEach(seat => {
+            seat.classList.remove('selected');
+            seat.classList.add('reserved');
+            seat.setAttribute('aria-label', `Seat ${seat.getAttribute('data-seat-id')} reserved`);
+        });
+    });
+    
+    // Also close on escape key
+    window.addEventListener('keydown', function closeOnEscape(e) {
+        if (e.key === 'Escape') {
+            popup.remove();
+            window.removeEventListener('keydown', closeOnEscape);
+        }
+    });
+}
+
+// Function to show error message
+function showErrorMessage(message) {
+    // Remove any existing popups
+    const existingPopup = document.querySelector('.success-popup, .error-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Create the popup
+    const popup = document.createElement('div');
+    popup.className = 'error-popup';
+    popup.innerHTML = `
+        <div class="popup-content">
+            <h3>Fout!</h3>
+            <p>${message}</p>
+            <button class="close-popup">OK</button>
+        </div>
+    `;
+    
+    // Add to body
+    document.body.appendChild(popup);
+    
+    // Focus on the button for accessibility
+    setTimeout(() => {
+        popup.querySelector('.close-popup').focus();
+    }, 100);
+    
+    // Close button event
+    popup.querySelector('.close-popup').addEventListener('click', function() {
+        popup.remove();
+    });
+    
+    // Also close on escape key
+    window.addEventListener('keydown', function closeOnEscape(e) {
+        if (e.key === 'Escape') {
+            popup.remove();
+            window.removeEventListener('keydown', closeOnEscape);
+        }
+    });
+    
+    // Auto close after 3 seconds
+    setTimeout(() => {
+        if (document.body.contains(popup)) {
+            popup.remove();
+        }
+    }, 3000);
+}
+
+// Function to add border around the minigame
+function addBorderToMinigame() {
+    // Create a wrapper div for the minigame area
+    const mainContent = document.querySelector('.main-content');
+    
+    if (mainContent) {
+        // Find the elements we want to include in the border
+        const elementsToInclude = [
+            '.labels-section:first-of-type',
+            '.grid',
+            '.reserveren',
+            '.filters'  // Include the filter buttons
+        ];
+        
+        // Create the border container
+        const borderContainer = document.createElement('div');
+        borderContainer.className = 'minigame-border';
+        
+        // Find all elements that should be inside the border
+        elementsToInclude.forEach(selector => {
+            const element = mainContent.querySelector(selector);
+            if (element) {
+                // Mark the element to be moved
+                element.setAttribute('data-move-to-border', 'true');
+            }
+        });
+        
+        // Insert the border container before the first element to be moved
+        const firstElement = mainContent.querySelector('[data-move-to-border="true"]');
+        if (firstElement) {
+            firstElement.parentNode.insertBefore(borderContainer, firstElement);
+            
+            // Move all marked elements inside the border
+            document.querySelectorAll('[data-move-to-border="true"]').forEach(element => {
+                borderContainer.appendChild(element);
+                element.removeAttribute('data-move-to-border');
+            });
+        }
+    }
+}
