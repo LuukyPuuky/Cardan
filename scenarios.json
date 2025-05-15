@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Fastfood restaurant",
+    "text": "Je staat in de rij bij een fastfoodrestaurant. Boven de balie hangen menuborden met afbeeldingen van hamburgers, frietjes en drankjes. De medewerker vraagt: 'Wat wil je bestellen?'",
+    "question": "Wat zegt de medewerker?",
+    "answers": [
+      "wat wil je bestellen",
+      "wat wilt u bestellen",
+      "wat kan ik voor je doen"
+    ]
+  },
+  {
+    "title": "Treinstation",
+    "text": "Je bent op het station en ziet een bord met de vertrektijden. De trein naar Amsterdam vertrekt om 14:32 vanaf spoor 5. Je hebt nog tien minuten om daar te komen.",
+    "question": "Waar vertrekt de trein naar Amsterdam?",
+    "answers": ["spoor 5", "van spoor 5"]
+  },
+  {
+    "title": "Supermarkt",
+    "text": "In de supermarkt hoor je een omroepbericht: 'Let op: onze winkel sluit over vijftien minuten. Wilt u alstublieft naar de kassa gaan om af te rekenen.'",
+    "question": "Wat wordt er omgeroepen?",
+    "answers": ["winkel sluit", "naar de kassa", "afrekenen"]
+  },
+  {
+    "title": "Dokterspraktijk",
+    "text": "Je bent in de wachtkamer van de dokter. Op een bord staat: 'Gelieve uw identiteitskaart klaar te houden en plaats te nemen in de wachtruimte.'",
+    "question": "Wat moet je doen volgens het bord?",
+    "answers": ["identiteitskaart", "wachtruimte", "klaar houden"]
+  },
+  {
+    "title": "Bibliotheek",
+    "text": "In de bibliotheek hangt een bord: 'Stilte alstublieft. Zet je telefoon op stil en respecteer de rust van andere bezoekers.'",
+    "question": "Wat staat er op het bord in de bibliotheek?",
+    "answers": ["stilte", "telefoon op stil", "rust"]
+  }
+]
