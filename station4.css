@@ -121,6 +121,10 @@ h1 {
   font-weight: bold;
 }
 
+.send-button:hover {
+  background-color: #007a3d;
+}
+
 .button-container {
   display: flex;
   justify-content: end;
@@ -135,6 +139,10 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.next-button:hover {
+  background-color: #007a3d;
 }
 
 .simulatiebutton {
