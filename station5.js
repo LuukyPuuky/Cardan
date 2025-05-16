@@ -90,7 +90,6 @@ function loadNextScenario() {
 
   answerInput.value = "";
   result.textContent = "";
-  startTimer();
 
   const rng = Math.floor(Math.random() * allScenarios.length);
   currentScenarioIndex = rng;
