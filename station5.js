@@ -6,12 +6,13 @@ const attemptsCounter = document.getElementById("attempts");
 const timerDisplay = document.getElementById("tijd");
 const intensitySelect = document.getElementById("intensity");
 const question = document.querySelector(".question");
+const formSection = document.querySelector(".form-section");
 
 let attempts = 0;
 let timeInterval;
 let seconds = 0;
 let minutes = 0;
-let timer;
+let simulationStarted = false;
 let allScenarios = [];
 let currentScenarioIndex = 0;
 let questionsAnswered = 0;
@@ -28,7 +29,14 @@ function createStartButton() {
   startButton.addEventListener("click", () => {
     if (!simulationStarted) {
       simulationStarted = true;
+      questionsAnswered = 0;
+      attempts = 0;
+      seconds = 0;
+      minutes = 0;
+      timerDisplay.textContent = "Tijd: 00:00";
+      attemptsCounter.textContent = "Aantal pogingen: 0";
       startTimer();
+      loadNextScenario();
 
       startButton.textContent = "Simulatie Actief";
       startButton.classList.add("active");
@@ -44,6 +52,7 @@ function createStartButton() {
 }
 
 function startTimer() {
+  clearInterval(timeInterval); // Prevent overlapping timers
   timeInterval = setInterval(() => {
     seconds++;
     if (seconds >= 60) {
@@ -54,6 +63,17 @@ function startTimer() {
       .toString()
       .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timeInterval);
+}
+
+function resetTimer() {
+  stopTimer();
+  seconds = 0;
+  minutes = 0;
+  timerDisplay.textContent = "Tijd: 00:00";
 }
 
 function renderText(text, intensity) {
@@ -74,7 +94,7 @@ async function getScenarios() {
       throw new Error(`Response status: ${response.status}`);
     }
     allScenarios = await response.json();
-    loadNextScenario();
+    // Do NOT load scenario yet — wait for Simulatie click
   } catch (error) {
     console.error("Fout bij het laden van scenario's:", error.message);
   }
@@ -84,7 +104,13 @@ function loadNextScenario() {
   if (questionsAnswered >= maxQuestions) {
     textContainer.innerHTML = "Je hebt alle vragen beantwoord!";
     question.textContent = "";
-    clearInterval(timer);
+    resetTimer();
+    alert("Goed gedaan! Je hebt alle vragen beantwoord.");
+    const startButton = document.getElementById("simulatiebutton");
+    startButton.textContent = "Start Simulatie";
+    startButton.classList.remove("active");
+    startButton.disabled = false;
+    simulationStarted = false;
     return;
   }
 
@@ -100,6 +126,8 @@ function loadNextScenario() {
 }
 
 checkButton.addEventListener("click", () => {
+  if (!simulationStarted) return;
+
   const userAnswer = answerInput.value.toLowerCase();
   attempts++;
   attemptsCounter.textContent = `Aantal pogingen: ${attempts}`;
@@ -117,6 +145,7 @@ checkButton.addEventListener("click", () => {
 });
 
 intensitySelect.addEventListener("change", () => {
+  if (!simulationStarted) return;
   const scenario = allScenarios[currentScenarioIndex];
   renderText(scenario.text, intensitySelect.value);
 });
@@ -134,8 +163,10 @@ function dropdown() {
   });
 }
 
-dropdown();
-createStartButton();
-
 // Init
-document.addEventListener("DOMContentLoaded", getScenarios);
+document.addEventListener("DOMContentLoaded", () => {
+  timerDisplay.textContent = "Tijd: 00:00";
+  getScenarios();
+  createStartButton();
+  dropdown();
+});
