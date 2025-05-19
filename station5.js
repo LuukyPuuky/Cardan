@@ -7,6 +7,7 @@ const timerDisplay = document.getElementById("tijd");
 const intensitySelect = document.getElementById("intensity");
 const question = document.querySelector(".question");
 const formSection = document.querySelector(".form-section");
+const correctCounter = document.getElementById("correctCounter");
 
 let attempts = 0;
 let timeInterval;
@@ -17,6 +18,10 @@ let allScenarios = [];
 let currentScenarioIndex = 0;
 let questionsAnswered = 0;
 const maxQuestions = 5;
+
+// Shuffle the scenarios
+let shuffledScenarios = [];
+let currentShuffledIndex = 0;
 
 function createStartButton() {
   const startButton = document.getElementById("simulatiebutton");
@@ -35,6 +40,11 @@ function createStartButton() {
       minutes = 0;
       timerDisplay.textContent = "Tijd: 00:00";
       attemptsCounter.textContent = "Aantal pogingen: 0";
+
+      // Shuffle scenarios
+      shuffledScenarios = [...allScenarios];
+      shuffleArray(shuffledScenarios);
+      currentShuffledIndex = 0;
       startTimer();
       loadNextScenario();
 
@@ -100,7 +110,16 @@ async function getScenarios() {
   }
 }
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function loadNextScenario() {
+  // Check if all scenarios have been answered
+
   if (questionsAnswered >= maxQuestions) {
     textContainer.innerHTML = "Je hebt alle vragen beantwoord!";
     question.textContent = "";
@@ -117,12 +136,13 @@ function loadNextScenario() {
   answerInput.value = "";
   result.textContent = "";
 
-  const rng = Math.floor(Math.random() * allScenarios.length);
-  currentScenarioIndex = rng;
+  // use the next scenario from the shuffle list
 
-  const scenario = allScenarios[rng];
+  const scenario = shuffledScenarios[currentShuffledIndex];
+  currentScenarioIndex = allScenarios.indexOf(scenario);
   renderText(scenario.text, intensitySelect.value);
   question.textContent = scenario.question;
+  currentShuffledIndex++;
 }
 
 checkButton.addEventListener("click", () => {
