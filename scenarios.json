@@ -19,18 +19,30 @@
     "title": "Supermarkt",
     "text": "In de supermarkt hoor je een omroepbericht: 'Let op: onze winkel sluit over vijftien minuten. Wilt u alstublieft naar de kassa gaan om af te rekenen.'",
     "question": "Wat wordt er omgeroepen?",
-    "answers": ["winkel sluit", "naar de kassa", "afrekenen"]
+    "answers": [
+      "winkel sluit",
+      "naar de kassa",
+      "afrekenen",
+      "vijftien minuten",
+      "15 minuten",
+      "15 min"
+    ]
   },
   {
     "title": "Dokterspraktijk",
     "text": "Je bent in de wachtkamer van de dokter. Op een bord staat: 'Gelieve uw identiteitskaart klaar te houden en plaats te nemen in de wachtruimte.'",
     "question": "Wat moet je doen volgens het bord?",
-    "answers": ["identiteitskaart", "wachtruimte", "klaar houden"]
+    "answers": [
+      "identiteitskaart",
+      "wachtruimte",
+      "klaar houden",
+      "plaats nemen"
+    ]
   },
   {
     "title": "Bibliotheek",
     "text": "In de bibliotheek hangt een bord: 'Stilte alstublieft. Zet je telefoon op stil en respecteer de rust van andere bezoekers.'",
     "question": "Wat staat er op het bord in de bibliotheek?",
-    "answers": ["stilte", "telefoon op stil", "rust"]
+    "answers": ["stilte", "telefoon op stil", "rust", "stilte alstublieft"]
   }
 ]
