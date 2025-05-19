@@ -17,13 +17,6 @@ body {
   margin-top: 5rem;
 }
 
-.text {
-  font-family: monospace;
-  white-space: pre-wrap;
-  line-height: 1.6;
-  margin: 20px 0;
-}
-
 .text span {
   display: inline-block;
   animation: moveLow 2s infinite ease-in-out;

@@ -160,6 +160,7 @@ checkButton.addEventListener("click", () => {
 
   if (isCorrect) {
     questionsAnswered++;
+    correctCounter.textContent = `Aantal correcte antwoorden: ${questionsAnswered}`;
     setTimeout(() => loadNextScenario(), 1000);
   }
 });
