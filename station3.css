@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bericht {
+  resize: vertical;
+  width: 100%;
+}
+
+.email-section input,
+.email-section textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-section button {
+  background-color: #00963f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.email-section button:hover {
+  background-color: #007f36;
+}
+
+.instructie {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  font-weight: bold;
+}
