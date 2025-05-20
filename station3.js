@@ -3,7 +3,6 @@ let adhdDistractionInterval;
 let adhdTimerInterval;
 let adhdSeconds = 0;
 let adhdMinutes = 0;
-const distractionAudio = document.getElementById("distractionSound");
 
 const adhdDistractions = [
   "Wat ga je vanavond eten?",
@@ -42,6 +41,21 @@ function startAdhdTimer() {
     const sec = String(adhdSeconds).padStart(2, "0");
     timerEl.textContent = `Tijd: ${min}:${sec}`;
   }, 1000);
+}
+
+function playRandomDistractionSound() {
+  const distractionSounds = [
+    "sounds/mixkit-arrow-whoosh-1491.wav",
+    "sounds/mixkit-dog-barking-twice-1.wav",
+    "sounds/mixkit-flock-of-wild-geese-20.wav",
+  ];
+
+  const sound = new Audio(
+    distractionSounds[Math.floor(Math.random() * distractionSounds.length)]
+  );
+  sound.play().catch((err) => {
+    console.warn("Distraction sound could not play:", err);
+  });
 }
 
 function startAdhdDistractions() {
@@ -104,13 +118,8 @@ function startAdhdDistractions() {
       }
     }, 3000);
 
-    // Play audio
-    try {
-      distractionAudio.currentTime = 0;
-      distractionAudio.play();
-    } catch (err) {
-      console.warn("Audio could not play:", err);
-    }
+    // Play random sound
+    playRandomDistractionSound();
   }, Math.random() * 1500 + 800);
 }
 
