@@ -15,6 +15,19 @@ const adhdDistractions = [
   "Ben je iets vergeten?",
   "Netflix pauze?",
   "Hoe laat is het eigenlijk?",
+  "Ik heb dorst, even wat drinken?",
+  "Misschien moet ik mijn planten water geven?",
+  "Waar dacht ik ook alweer aan?",
+  "Even snel YouTube kijken?",
+  "Wat was dat geluid?",
+  "Heb ik de deur wel op slot gedaan?",
+  "Zou ik even moeten stretchen?",
+  "Trilt mijn telefoon?",
+  "Moest ik nog iets anders doen?",
+  "Wat is er nieuw op TikTok?",
+  "Die vlek op de muur, wat is dat?",
+  "Even kijken of nog nieuws is.",
+  "Is het al lunchtijd?",
 ];
 
 function startAdhdTimer() {
@@ -32,24 +45,73 @@ function startAdhdTimer() {
 }
 
 function startAdhdDistractions() {
+  const colors = [
+    "#e74c3c",
+    "#8e44ad",
+    "#3498db",
+    "#f39c12",
+    "#2ecc71",
+    "#1abc9c",
+  ];
+
+  const container = document.querySelector(".container");
+  const containerRect = container.getBoundingClientRect();
+
   adhdDistractionInterval = setInterval(() => {
     const div = document.createElement("div");
     div.className = "distraction";
-    div.innerText =
-      adhdDistractions[Math.floor(Math.random() * adhdDistractions.length)];
-    div.style.top = Math.random() * window.innerHeight * 0.8 + "px";
-    div.style.left = Math.random() * window.innerWidth * 0.8 + "px";
-    document.body.appendChild(div);
 
+    // Add emoji + text
+    const emojis = ["🤔", "😵", "🎵", "📱", "📺", "🕊️", "🎮", "📷", "🧠"];
+    const randomText =
+      adhdDistractions[Math.floor(Math.random() * adhdDistractions.length)];
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    div.innerText = `${randomEmoji} ${randomText}`;
+
+    // Random background color
+    div.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    div.style.position = "absolute";
+    container.style.position = "relative";
+
+    container.appendChild(div);
+
+    requestAnimationFrame(() => {
+      const divWidth = div.offsetWidth;
+      const divHeight = div.offsetHeight;
+      const maxX = container.clientWidth - divWidth;
+      const maxY = container.clientHeight - divHeight;
+
+      div.style.left = Math.floor(Math.random() * maxX) + "px";
+      div.style.top = Math.floor(Math.random() * maxY) + "px";
+
+      div.classList.add("fade-in");
+    });
+
+    div.addEventListener("click", () => {
+      div.classList.remove("fade-in");
+      div.classList.add("fade-out");
+      setTimeout(() => div.remove(), 500);
+    });
+
+    // Auto-remove after timeout
+    setTimeout(() => {
+      if (container.contains(div)) {
+        div.classList.remove("fade-in");
+        div.classList.add("fade-out");
+        setTimeout(() => div.remove(), 500);
+      }
+    }, 3000);
+
+    // Play audio
     try {
       distractionAudio.currentTime = 0;
       distractionAudio.play();
     } catch (err) {
       console.warn("Audio could not play:", err);
     }
-
-    setTimeout(() => div.remove(), 3000);
-  }, Math.random() * 1500 + 800); // 0.8 to 2.3 sec
+  }, Math.random() * 1500 + 800);
 }
 
 function resetAdhdSimulation() {
@@ -66,6 +128,19 @@ function startAdhdSimulation() {
   startAdhdDistractions();
 }
 
+function dropdown() {
+  const infoCards = document.querySelectorAll(".info-card");
+  infoCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("expanded");
+      const content = card.querySelector(".info-content");
+      const arrow = card.querySelector(".arrow");
+      content.classList.toggle("hidden");
+      arrow.classList.toggle("rotated");
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementById("simulatiebutton");
   startBtn.addEventListener("click", () => {
@@ -77,14 +152,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Accordion toggle logic
-  const cards = document.querySelectorAll(".info-card");
-  cards.forEach((card) => {
-    const arrow = card.querySelector(".arrow");
-    const content = card.querySelector(".info-content");
-    card.addEventListener("click", () => {
-      content.classList.toggle("hidden");
-      arrow.classList.toggle("rotated");
-    });
-  });
+  dropdown();
 });
