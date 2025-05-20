@@ -143,6 +143,28 @@ function dropdown() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementById("simulatiebutton");
+  const verzendenBtn = document.getElementById("verzenden");
+  const container = document.querySelector(".container");
+
+  const inputs = container.querySelectorAll("input, textarea, select");
+
+  // Enable/disable "Verzenden" based on input validation
+  function checkFormValidity() {
+    let allFilled = true;
+    inputs.forEach((input) => {
+      if (!input.value.trim()) {
+        allFilled = false;
+      }
+    });
+    verzendenBtn.disabled = !allFilled;
+  }
+
+  // Check form on input change
+  inputs.forEach((input) => {
+    input.addEventListener("input", checkFormValidity);
+  });
+
+  // Start simulation
   startBtn.addEventListener("click", () => {
     if (!simulationStarted) {
       simulationStarted = true;
@@ -150,6 +172,45 @@ document.addEventListener("DOMContentLoaded", () => {
       startBtn.textContent = "Simulatie Actief";
       startAdhdSimulation();
     }
+  });
+
+  // Handle "Verzenden"
+  verzendenBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let allValid = true;
+
+    inputs.forEach((input) => {
+      if (!input.value.trim()) {
+        input.classList.add("field-error");
+        allValid = false;
+      } else {
+        input.classList.remove("field-error");
+      }
+    });
+
+    if (!allValid) {
+      alert("Vul alle velden in voordat je verzendt.");
+      return;
+    }
+
+    // Stop simulation
+    resetAdhdSimulation();
+    simulationStarted = false;
+
+    // Remove distraction elements if still visible
+    document.querySelectorAll(".distraction").forEach((el) => el.remove());
+
+    // Reset UI
+    startBtn.disabled = false;
+    startBtn.textContent = "Start Simulatie";
+    verzendenBtn.textContent = "Verzenden";
+    alert("Je hebt je email verzonden!");
+    verzendenBtn.disabled = true;
+
+    // Optional: Reset form
+    container.querySelector("form")?.reset();
+    checkFormValidity();
   });
 
   dropdown();

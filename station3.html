@@ -159,10 +159,20 @@
               gaat komen voor de les van vandaag.
             </p>
             <label for="naar">Naar</label>
-            <input type="text" id="naar" placeholder="docent@example.com" />
+            <input
+              type="text"
+              id="naar"
+              placeholder="docent@example.com"
+              required
+            />
 
             <label for="onderwerp">Onderwerp</label>
-            <input type="text" id="onderwerp" placeholder="Onderwerp" />
+            <input
+              type="text"
+              id="onderwerp"
+              placeholder="Onderwerp"
+              required
+            />
 
             <label for="bericht">Bericht</label>
             <textarea
@@ -170,6 +180,7 @@
               rows="5"
               placeholder="Typ hier je bericht..."
               class="bericht"
+              required
             ></textarea>
 
             <button id="verzenden">Verzenden</button>
