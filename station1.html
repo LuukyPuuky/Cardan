@@ -1,53 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="station1.css">
-    <title>Station 1 - Kleurenblindheid</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="station1.css" />
+  <title>Station 1 - Kleurenblindheid</title>
 </head>
 <body>
-    <!-- SVG Filters for colorblindness simulation -->
-    <svg class="filters-svg">
-      <defs>
-          <filter id="protanopia-filter">
-              <feColorMatrix 
-                  type="matrix" 
-                  values="0.567, 0.433, 0,     0, 0
-                          0.558, 0.442, 0,     0, 0
-                          0,     0.242, 0.758, 0, 0
-                          0,     0,     0,     1, 0" />
-          </filter>
-          <filter id="tritanopia-filter">
-              <feColorMatrix 
-                  type="matrix" 
-                  values="0.95, 0.05,  0,     0, 0
-                          0,    0.433, 0.567, 0, 0
-                          0,    0.475, 0.525, 0, 0
-                          0,    0,     0,     1, 0" />
-          </filter>
-      </defs>
-    </svg>  
+  <svg class="filters-svg" aria-hidden="true">
+    <defs>
+      <filter id="protanopia-filter">
+        <feColorMatrix type="matrix" values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0" />
+      </filter>
+      <filter id="tritanopia-filter">
+        <feColorMatrix type="matrix" values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0" />
+      </filter>
+    </defs>
+  </svg>  
   
-  <!-- Top Bar -->
-    <div class="top-bar">
-        <a href="station1.html" class="top-bar-link">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-          >
-            <path
-              d="M9.75 3.6039V9.3179C9.75 9.61337 9.69181 9.90596 9.57874 10.1789C9.46567 10.4519 9.29993 10.7 9.091 10.9089L5 14.9999M9.75 3.6039C9.499 3.6269 9.249 3.6539 9 3.6859M9.75 3.6039C11.2468 3.46472 12.7532 3.46472 14.25 3.6039M5 14.9999L5.77 14.8069C7.863 14.2897 10.0718 14.5354 12 15.4999C13.9282 16.4644 16.137 16.7101 18.23 16.1929L19.8 15.7999M5 14.9999L2.798 17.2029C1.565 18.4339 2.147 20.5199 3.865 20.8129C6.509 21.2649 9.227 21.4999 12 21.4999C14.7262 21.5008 17.4476 21.271 20.135 20.8129C21.852 20.5199 22.434 18.4339 21.202 17.2019L19.8 15.7999M14.25 3.6039V9.3179C14.25 9.9149 14.487 10.4879 14.909 10.9089L19.8 15.7999M14.25 3.6039C14.501 3.6269 14.751 3.6539 15 3.6859"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+  <div class="top-bar">
+    <a href="station1.html" class="top-bar-link">
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+        >
+        <path
+          d="M9.75 3.6039V9.3179C9.75 9.61337 9.69181 9.90596 9.57874 10.1789C9.46567 10.4519 9.29993 10.7 9.091 10.9089L5 14.9999M9.75 3.6039C9.499 3.6269 9.249 3.6539 9 3.6859M9.75 3.6039C11.2468 3.46472 12.7532 3.46472 14.25 3.6039M5 14.9999L5.77 14.8069C7.863 14.2897 10.0718 14.5354 12 15.4999C13.9282 16.4644 16.137 16.7101 18.23 16.1929L19.8 15.7999M5 14.9999L2.798 17.2029C1.565 18.4339 2.147 20.5199 3.865 20.8129C6.509 21.2649 9.227 21.4999 12 21.4999C14.7262 21.5008 17.4476 21.271 20.135 20.8129C21.852 20.5199 22.434 18.4339 21.202 17.2019L19.8 15.7999M14.25 3.6039V9.3179C14.25 9.9149 14.487 10.4879 14.909 10.9089L19.8 15.7999M14.25 3.6039C14.501 3.6269 14.751 3.6539 15 3.6859"
+          stroke="white"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
           Ervaringsplein
         </a>
         <a href="#" class="top-bar-link">
@@ -65,17 +53,16 @@
           </svg>
           Mijn Cardan
         </a>
-    </div>
+  </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">
-          <img src="Cardanlogo.svg" alt="Cardan logo" />
-        </div>
+  <header class="header">
+    <div class="logo">
+      <img src="Cardanlogo.svg" alt="Cardan logo" />
+    </div>
   
-        <nav>
-          <ul class="nav-menu">
-            <li class="nav-item">
+    <nav>
+      <ul class="nav-menu">
+        <li class="nav-item">
               <a href="#" class="nav-link"
                 >Onze diensten <span class="dropdown-icon"></span
               ></a>
@@ -104,95 +91,73 @@
         <div class="language-selector">
           <a href="#" class="active-lang">NL</a> | <a href="#">EN</a>
         </div>
-    </header>
+  </header>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="container">
-            <br>
-            <h1>Visuele beperking</h1>
-            <p>Deze mini-game laat je ervaren hoe het is om visuele beperkingen te hebben.</p>
-            <br>
-            <p class="instruction">Probeer een stoel te reserveren in de bioscoop!</p>
-
-
-            <div class="labels-section">
-              <div class="label-item">
-                  <span>Beschikbaar</span>
-                  <span>Geel</span>
-              </div>
-              <div class="label-item">
-                  <span>Bezet</span>
-                  <span>Blauw</span>
-              </div>
-              <div class="label-item">
-                  <span>Geselecteerd</span>
-                  <span>Groen</span>
-              </div>
-            </div>
-
-            <!-- Seats -->
-            <div class="grid" id="seatGrid"></div>
-
-            <!-- reserveren -->
-            <button class="reserveren">Reserveren</button>
-
-      
-            <!-- Filters -->
-            <div class="filters">
-                <label><input type="radio" name="filter" value="none" checked> Geen filter</label>
-                <label><input type="radio" name="filter" value="protanopia"> Rood-Groen (Protanopie)</label>
-                <label><input type="radio" name="filter" value="tritanopia"> Geel-Blauw (Tritanopie)</label>
-                <label><input type="radio" name="filter" value="achromatopsia"> Totaal kleurenblind</label>
-            </div>
+  <div class="main-content">
+    <div class="container">
+      <br>
+      <h1>Visuele beperking</h1>
+      <p>Twee mini-games om je te laten ervaren hoe het is om een visuele beperkingen te hebben.</p>
+      <p><b>Probeer een stoel te reserveren in de bioscoop!</b></p>
+      <p><b>Legenda:</b><br>Beschikbaar = Geel<br>Bezet = Blauw<br>Geselecteerd = Groen</p>
             
-            <!-- Change from tabs to navigation buttons -->
-            <div class="labels-section navigation-buttons">
-              <a href="station1.html" class="nav-button" id="colorblindness-button">
-                <div class="color-box colorblind"></div>
-                  <span>Kleurenblindheid</span>
-              </a>
-              <a href="station1koker.html" class="nav-button" id="blindness-button">
-                <div class="color-box blindness"></div>
-                <span>Blindheid</span>
-              </a>
-            </div>
-      
-          <div class="faq">
-            <details class="faq-item">
-              <summary>Wat is kleurenblindheid precies en hoe beïnvloedt het de gebruiker?</summary>
-              <div class="faq-content">
-                <p>Kleurenblindheid is een aandoening waarbij iemand kleuren moeilijk kan onderscheiden. Dit kan volledig zijn (geen kleuren zien) of gedeeltelijk (bepaalde kleuren niet kunnen onderscheiden). De meest voorkomende vorm is rood-groen kleurenblindheid, waarbij het lastig is om deze kleuren van elkaar te onderscheiden. Dit heeft impact op dagelijkse activiteiten zoals het lezen van grafieken, kaarten of het interpreteren van kleurcodes. Voor gebruikers van websites of apps betekent dit dat kleur alleen niet voldoende is om informatie over te brengen.</p>
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary>Waarom is kleurcontrast belangrijk voor toegankelijkheid?</summary>
-              <div class="faq-content">
-                <p>Goed contrast zorgt ervoor dat tekst en elementen duidelijk zichtbaar zijn voor iedereen, inclusief mensen met visuele beperkingen. Een hoog contrast ratio (minimaal 4.5:1 voor normale tekst volgens de WCAG-richtlijnen) zorgt ervoor dat tekst leesbaar blijft, ook voor mensen met kleurenblindheid of verminderd zicht. Zonder voldoende contrast kunnen elementen wegvallen tegen de achtergrond, waardoor informatie ontoegankelijk wordt.</p>
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary>Hoe kan ik mijn website of documenten toegankelijker maken voor mensen met kleurenblindheid?</summary>
-              <div class="faq-content">
-                <p>Gebruik tools zoals contrastcheckers om te zorgen voor voldoende contrast tussen tekst en achtergrond. Vermijd het gebruik van kleur als enige manier om informatie over te brengen; gebruik ook vormen, patronen of tekst. Test je ontwerp met kleurenblindheid-simulatoren. Gebruik kleurcombinaties die ook voor kleurenblinde mensen goed te onderscheiden zijn. Bied alternatieve tekst (alt-tekst) bij afbeeldingen die belangrijke kleurinformatie bevatten.</p>
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary>Welke hulpmiddelen en technologieën zijn beschikbaar voor mensen met kleurenblindheid?</summary>
-              <div class="faq-content">
-                <p>Er zijn schermfilters, apps, en browserextensies beschikbaar die helpen kleuren te onderscheiden. Speciale brillen met gekleurde lenzen kunnen helpen bepaalde kleuren beter te zien. Software zoals Color Oracle of browser-extensies zoals Daltonize kunnen kleuren aanpassen zodat ze beter te onderscheiden zijn. Voor mobiele apparaten zijn er apps die kleuren kunnen herkennen en benoemen, of die beelden aanpassen om kleurverschillen te versterken.</p>
-              </div>
-            </details>
-          </div>
-      
-          <a href="station2.html">
-            <button class="next">Volgende</button>
-          </a>
-          
-        </div>
-    </div>
+      <div class="labels-section navigation-buttons top-navigation">
+        <a href="station1.html" class="nav-button" id="colorblindness-button">
+          <div class="color-box colorblind"></div>
+          <span>Kleurenblindheid</span>
+        </a>
+        <a href="station1koker.html" class="nav-button" id="blindness-button">
+          <div class="color-box blindness"></div>
+          <span>Kokervisie</span>
+        </a>
+      </div>
 
-    <script src="station1.js"></script>
+      <div class="grid" id="seatGrid"></div>
+
+      <button class="reserveren">Reserveren</button>
+
+      <div class="filters">
+        <label><input type="radio" name="filter" value="none" checked> Geen filter</label>
+        <label><input type="radio" name="filter" value="protanopia"> Rood-Groen (Protanopie)</label>
+        <label><input type="radio" name="filter" value="tritanopia"> Geel-Blauw (Tritanopie)</label>
+        <label><input type="radio" name="filter" value="achromatopsia"> Totaal kleurenblind</label>
+      </div>
+      
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Wat is kleurenblindheid precies en hoe beïnvloedt het de gebruiker?</summary>
+          <div class="faq-content">
+            <p>Kleurenblindheid is een aandoening waarbij iemand kleuren moeilijk kan onderscheiden. Dit kan volledig zijn (geen kleuren zien) of gedeeltelijk (bepaalde kleuren niet kunnen onderscheiden). De meest voorkomende vorm is rood-groen kleurenblindheid, waarbij het lastig is om deze kleuren van elkaar te onderscheiden. Dit heeft impact op dagelijkse activiteiten zoals het lezen van grafieken, kaarten of het interpreteren van kleurcodes. Voor gebruikers van websites of apps betekent dit dat kleur alleen niet voldoende is om informatie over te brengen.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Waarom is kleurcontrast belangrijk voor toegankelijkheid?</summary>
+          <div class="faq-content">
+            <p>Goed contrast zorgt ervoor dat tekst en elementen duidelijk zichtbaar zijn voor iedereen, inclusief mensen met visuele beperkingen. Een hoog contrast ratio (minimaal 4.5:1 voor normale tekst volgens de WCAG-richtlijnen) zorgt ervoor dat tekst leesbaar blijft, ook voor mensen met kleurenblindheid of verminderd zicht. Zonder voldoende contrast kunnen elementen wegvallen tegen de achtergrond, waardoor informatie ontoegankelijk wordt.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Hoe kan ik mijn website of documenten toegankelijker maken voor mensen met kleurenblindheid?</summary>
+            <div class="faq-content">
+              <p>Gebruik tools zoals contrastcheckers om te zorgen voor voldoende contrast tussen tekst en achtergrond. Vermijd het gebruik van kleur als enige manier om informatie over te brengen; gebruik ook vormen, patronen of tekst. Test je ontwerp met kleurenblindheid-simulatoren. Gebruik kleurcombinaties die ook voor kleurenblinde mensen goed te onderscheiden zijn. Bied alternatieve tekst (alt-tekst) bij afbeeldingen die belangrijke kleurinformatie bevatten.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+          <summary>Welke hulpmiddelen en technologieën zijn beschikbaar voor mensen met kleurenblindheid?</summary>
+          <div class="faq-content">
+            <p>Er zijn schermfilters, apps, en browserextensies beschikbaar die helpen kleuren te onderscheiden. Speciale brillen met gekleurde lenzen kunnen helpen bepaalde kleuren beter te zien. Software zoals Color Oracle of browser-extensies zoals Daltonize kunnen kleuren aanpassen zodat ze beter te onderscheiden zijn. Voor mobiele apparaten zijn er apps die kleuren kunnen herkennen en benoemen, of die beelden aanpassen om kleurverschillen te versterken.</p>
+          </div>
+        </details>
+      </div>
+      
+      <a href="station2.html">
+        <button class="next">Volgende</button>
+      </a>
+          
+    </div>
+  </div>
+
+  <script src="station1.js"></script>
 
 </body>
 </html>
