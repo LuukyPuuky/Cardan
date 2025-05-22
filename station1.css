@@ -341,6 +341,41 @@ body.achromatopsia {
   font-size: 24px;
 }
 
+/* Tabs CSS */
+.tabs {
+  margin-bottom: 20px;
+  display: flex;
+  background-color: #e6f7ea;
+  max-width: fit-content;
+  padding: 0.5rem 0rem;
+  border-radius: 5px;
+}
+
+.tab {
+  padding: 4px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: #c8e6c9;
+  color: #005700;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #009b4d;
+  color: white;
+}
+
+/* Form Instruction */
+.form-instruction {
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
