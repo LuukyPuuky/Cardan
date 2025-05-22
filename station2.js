@@ -81,3 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
   adjustVideoSize();
   window.addEventListener('resize', adjustVideoSize);
 });
+
+// Tab functionality
+          const tabs = document.querySelectorAll('.tab');
+          const tabContents = document.querySelectorAll('.tab-content');

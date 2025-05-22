@@ -29,47 +29,40 @@ p {
 
 /* Tabs styling */
 .tabs {
+  margin-bottom: 20px;
   display: flex;
-  margin-bottom: 0;
-  border-bottom: none;
+  background-color: #e6f7ea;
+  max-width: fit-content;
+  padding: 0.5rem 0rem;
+  border-radius: 5px;
 }
 
 .tab {
-  padding: 12px 24px;
-  border: 1px solid #ddd;
-  border-bottom: none;
-  background-color: #f8f8f8;
-  margin-right: 2px;
-  transition: all 0.3s;
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: 4px 4px 0 0;
-  color: #666;
+  padding: 4px 14px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .tab:hover {
-  background-color: #eaeaea;
+  background-color: #c8e6c9;
+  color: #005700;
+  transition: background-color 0.3s ease;
 }
 
 .tab.active {
-  background-color: white;
-  font-weight: 600;
-  border-top: 3px solid #00a651;
-  color: #00a651;
-  position: relative;
-  z-index: 1;
+  background-color: #009b4d;
+  color: white;
 }
 
 /* Tab content styling */
 .tab-content {
   display: none;
   border: 1px solid #ddd;
-  padding: 30px;
+  padding: 5px;
   background: white;
-  border-radius: 0 4px 4px 4px;
+  border-radius: 0 1px 1px 1px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .tab-content.active {
