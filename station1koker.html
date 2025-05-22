@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="station1koker.css" />
     <link rel="stylesheet" href="stationnav.css" />
     <link rel="stylesheet" href="station1.css" />
-
+    <link rel="stylesheet" href="station3.css" />
     <title>Station 1 - Kokervisie</title>
   </head>
   <body>
@@ -130,201 +130,122 @@
       </nav>
     </div>
 
-    <div class="main-content">
-      <div class="container">
-        <br />
-        <h1>Visuele beperking</h1>
-        <p>
-          Twee mini-games om je te laten ervaren hoe het is om visuele
+    <div class="container">
+      <h1 class="title">Ervaar hoe het is om een visuele beperking te hebben.</h1>
+      <p class="subtitle">
+        Twee mini-games om je te laten ervaren hoe het is om een visuele
           beperkingen te hebben.
-        </p>
-        <p><b>Koop een rode handdoek in de winkel hieronder!</b></p>
+      </p>
 
-        <div class="labels-section navigation-buttons">
-          <a href="station1.html" class="nav-button">
-            <div class="color-box colorblind"></div>
-            <span>Kleurenblindheid</span>
-          </a>
-          <a href="station1koker.html" class="nav-button">
-            <div class="color-box blindness"></div>
-            <span>Blindheid</span>
-          </a>
-        </div>
-
-        <!-- Winkel items -->
-        <div class="store">
-          <div class="product red-towel" data-product="Rode handdoek">
-            <div class="product-image"></div>
-            <div class="product-name">🟥 Rode Handdoek</div>
-            <div class="product-price">€12,95</div>
-          </div>
-
-          <div class="product green-towel">
-            <div class="product-image"></div>
-            <div class="product-name">🟩 Groene Handdoek</div>
-            <div class="product-price">€12,95</div>
-          </div>
-
-          <div class="product blue-towel">
-            <div class="product-image"></div>
-            <div class="product-name">🟦Blauwe Handdoek</div>
-            <div class="product-price">€12,95</div>
-          </div>
-
-          <div class="product brown-towel">
-            <div class="product-image"></div>
-            <div class="product-name">🟫 Bruine Handdoek</div>
-            <div class="product-price">€12,95</div>
-          </div>
-        </div>
-
-        <p id="result" class="result-message"></p>
-
-        <!-- Info Section -->
-        <div class="info-section">
-          <!-- Card 1 -->
-          <div class="info-card">
-            <div class="info-header">
-              <h3>
-                Wat is kleurenblindheid precies en hoe beïnvloedt het de
-                gebruiker?
-              </h3>
-              <svg
-                class="arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                width="45"
-                height="45"
-                viewBox="0 0 45 45"
-                fill="none"
-              >
-                <path
-                  d="M33.2568 27.5166C32.9209 27.8828 32.4535 28.1007 31.9571 28.1225C31.4607 28.1443 30.9759 27.9682 30.6093 27.6328L22.498 20.2078L14.3905 27.6328C14.2109 27.8092 13.9976 27.9476 13.7634 28.0397C13.5292 28.1319 13.2788 28.1759 13.0272 28.1693C12.7755 28.1626 12.5278 28.1053 12.2988 28.0009C12.0698 27.8964 11.8642 27.7469 11.6942 27.5613C11.5241 27.3757 11.3933 27.1577 11.3093 26.9204C11.2253 26.6832 11.19 26.4314 11.2054 26.1802C11.2208 25.9289 11.2866 25.6834 11.399 25.4581C11.5113 25.2329 11.6678 25.0325 11.8593 24.8691L21.2324 16.2816C21.578 15.9653 22.0295 15.79 22.498 15.79C22.9665 15.79 23.418 15.9653 23.7636 16.2816L33.1405 24.8691C33.5067 25.2049 33.7247 25.6724 33.7465 26.1688C33.7683 26.6652 33.5921 27.1499 33.2568 27.5166Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div class="info-content">
-              <p>
-                Kleurenblindheid is een aandoening waarbij iemand kleuren
-                moeilijk kan onderscheiden. Dit kan volledig zijn (geen kleuren
-                zien) of gedeeltelijk (bepaalde kleuren niet kunnen
-                onderscheiden). De meest voorkomende vorm is rood-groen
-                kleurenblindheid, waarbij het lastig is om deze kleuren van
-                elkaar te onderscheiden. Dit heeft impact op dagelijkse
-                activiteiten zoals het lezen van grafieken, kaarten of het
-                interpreteren van kleurcodes. Voor gebruikers van websites of
-                apps betekent dit dat kleur alleen niet voldoende is om
-                informatie over te brengen.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="info-card">
-            <div class="info-header">
-              <h3>Waarom is kleurcontrast belangrijk voor toegankelijkheid?</h3>
-              <svg
-                class="arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                width="45"
-                height="45"
-                viewBox="0 0 45 45"
-                fill="none"
-              >
-                <path
-                  d="M33.2568 27.5166C32.9209 27.8828 32.4535 28.1007 31.9571 28.1225C31.4607 28.1443 30.9759 27.9682 30.6093 27.6328L22.498 20.2078L14.3905 27.6328C14.2109 27.8092 13.9976 27.9476 13.7634 28.0397C13.5292 28.1319 13.2788 28.1759 13.0272 28.1693C12.7755 28.1626 12.5278 28.1053 12.2988 28.0009C12.0698 27.8964 11.8642 27.7469 11.6942 27.5613C11.5241 27.3757 11.3933 27.1577 11.3093 26.9204C11.2253 26.6832 11.19 26.4314 11.2054 26.1802C11.2208 25.9289 11.2866 25.6834 11.399 25.4581C11.5113 25.2329 11.6678 25.0325 11.8593 24.8691L21.2324 16.2816C21.578 15.9653 22.0295 15.79 22.498 15.79C22.9665 15.79 23.418 15.9653 23.7636 16.2816L33.1405 24.8691C33.5067 25.2049 33.7247 25.6724 33.7465 26.1688C33.7683 26.6652 33.5921 27.1499 33.2568 27.5166Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div class="info-content hidden">
-              <p>
-                Goed contrast zorgt ervoor dat tekst en elementen duidelijk
-                zichtbaar zijn voor iedereen, inclusief mensen met visuele
-                beperkingen. Een hoog contrast ratio (minimaal 4.5:1 voor
-                normale tekst volgens de WCAG-richtlijnen) zorgt ervoor dat
-                tekst leesbaar blijft, ook voor mensen met kleurenblindheid of
-                verminderd zicht. Zonder voldoende contrast kunnen elementen
-                wegvallen tegen de achtergrond, waardoor informatie
-                ontoegankelijk wordt.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="info-card">
-            <div class="info-header">
-              <h3>
-                Hoe kan ik mijn website of documenten toegankelijker maken voor
-                mensen met kleurenblindheid?
-              </h3>
-              <svg
-                class="arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                width="45"
-                height="45"
-                viewBox="0 0 45 45"
-                fill="none"
-              >
-                <path
-                  d="M33.2568 27.5166C32.9209 27.8828 32.4535 28.1007 31.9571 28.1225C31.4607 28.1443 30.9759 27.9682 30.6093 27.6328L22.498 20.2078L14.3905 27.6328C14.2109 27.8092 13.9976 27.9476 13.7634 28.0397C13.5292 28.1319 13.2788 28.1759 13.0272 28.1693C12.7755 28.1626 12.5278 28.1053 12.2988 28.0009C12.0698 27.8964 11.8642 27.7469 11.6942 27.5613C11.5241 27.3757 11.3933 27.1577 11.3093 26.9204C11.2253 26.6832 11.19 26.4314 11.2054 26.1802C11.2208 25.9289 11.2866 25.6834 11.399 25.4581C11.5113 25.2329 11.6678 25.0325 11.8593 24.8691L21.2324 16.2816C21.578 15.9653 22.0295 15.79 22.498 15.79C22.9665 15.79 23.418 15.9653 23.7636 16.2816L33.1405 24.8691C33.5067 25.2049 33.7247 25.6724 33.7465 26.1688C33.7683 26.6652 33.5921 27.1499 33.2568 27.5166Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div class="info-content hidden">
-              <p>
-                Gebruik tools zoals contrastcheckers om te zorgen voor voldoende
-                contrast tussen tekst en achtergrond. Vermijd het gebruik van
-                kleur als enige manier om informatie over te brengen; gebruik
-                ook vormen, patronen of tekst. Test je ontwerp met
-                kleurenblindheid-simulatoren. Gebruik kleurcombinaties die ook
-                voor kleurenblinde mensen goed te onderscheiden zijn. Bied
-                alternatieve tekst (alt-tekst) bij afbeeldingen die belangrijke
-                kleurinformatie bevatten.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="info-card">
-            <div class="info-header">
-              <h3>
-                Welke hulpmiddelen en technologieën zijn beschikbaar voor mensen
-                met kleurenblindheid?
-              </h3>
-              <svg
-                class="arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                width="45"
-                height="45"
-                viewBox="0 0 45 45"
-                fill="none"
-              >
-                <path
-                  d="M33.2568 27.5166C32.9209 27.8828 32.4535 28.1007 31.9571 28.1225C31.4607 28.1443 30.9759 27.9682 30.6093 27.6328L22.498 20.2078L14.3905 27.6328C14.2109 27.8092 13.9976 27.9476 13.7634 28.0397C13.5292 28.1319 13.2788 28.1759 13.0272 28.1693C12.7755 28.1626 12.5278 28.1053 12.2988 28.0009C12.0698 27.8964 11.8642 27.7469 11.6942 27.5613C11.5241 27.3757 11.3933 27.1577 11.3093 26.9204C11.2253 26.6832 11.19 26.4314 11.2054 26.1802C11.2208 25.9289 11.2866 25.6834 11.399 25.4581C11.5113 25.2329 11.6678 25.0325 11.8593 24.8691L21.2324 16.2816C21.578 15.9653 22.0295 15.79 22.498 15.79C22.9665 15.79 23.418 15.9653 23.7636 16.2816L33.1405 24.8691C33.5067 25.2049 33.7247 25.6724 33.7465 26.1688C33.7683 26.6652 33.5921 27.1499 33.2568 27.5166Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div class="info-content hidden">
-              <p>
-                Er zijn schermfilters, apps, en browserextensies beschikbaar die
-                helpen kleuren te onderscheiden. Speciale brillen met gekleurde
-                lenzen kunnen helpen bepaalde kleuren beter te zien. Software
-                zoals Color Oracle of browser-extensies zoals Daltonize kunnen
-                kleuren aanpassen zodat ze beter te onderscheiden zijn. Voor
-                mobiele apparaten zijn er apps die kleuren kunnen herkennen en
-                benoemen, of die beelden aanpassen om kleurverschillen te
-                versterken.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <button class="next">Volgende</button>
+      <div class="tabs">
+        <a href="station1.html" class="tab">Kleurenblindheid</a>
+        <a href="station1koker.html" class="tab active">Kokervisie</a>
       </div>
+
+      <div class="main-content">
+            <!-- Store Section (Left) -->
+            <div class="form-section">
+                <div class="cinema-section">
+
+                  <div class="form-instruction">
+                    Koop een rode handdoek in de winkel hieronder!
+                  </div>
+
+                  <div class="store">
+                    <div class="product red-towel" data-product="Rode handdoek">
+                    <div class="product-image"></div>
+                    <div class="product-name">🟥 Rode Handdoek</div>
+                    <div class="product-price">€12,95</div>
+                  </div>
+
+                  <div class="product green-towel">
+                    <div class="product-image"></div>
+                    <div class="product-name">🟩 Groene Handdoek</div>
+                    <div class="product-price">€12,95</div>
+                  </div>
+
+                  <div class="product blue-towel">
+                    <div class="product-image"></div>
+                    <div class="product-name">🟦Blauwe Handdoek</div>
+                    <div class="product-price">€12,95</div>
+                  </div>
+
+                  <div class="product brown-towel">
+                    <div class="product-image"></div>
+                    <div class="product-name">🟫 Bruine Handdoek</div>
+                    <div class="product-price">€12,95</div>
+                  </div>
+                </div>   
+              </div>
+
+                <div id="result" class="result"></div>
+            </div>
+        
+
+        <!-- Info Section (Right) -->
+          <div class="info-section">
+            <!-- Card 1 -->
+            <div class="info-card">
+            <div class="info-header">
+              <h3>Wat is kokervisie precies en hoe beïnvloedt het de gebruiker?</h3>
+              <span class="arrow">▼</span>
+            </div>
+            <div class="info-content hidden">
+              <p>
+                Kokervisie, of tunnelzicht, is een visuele beperking waarbij het gezichtsveld sterk is vernauwd. Mensen met kokervisie kunnen alleen zien wat zich recht voor hen bevindt, terwijl het perifere zicht ontbreekt. Dit maakt het moeilijk om obstakels op te merken, te navigeren in drukke omgevingen of bewegende objecten te volgen. Activiteiten zoals autorijden, fietsen of zelfs winkelen kunnen hierdoor erg uitdagend zijn.
+              </p>
+            </div>
+          </div>
+
+    <!-- Card 2 -->
+    <div class="info-card">
+        <div class="info-header">
+            <h3>Waarom is veldbreedte belangrijk voor toegankelijkheid?</h3>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="info-content hidden">
+            <p>
+                Voor mensen met kokervisie is het belangrijk dat informatie goed gecentreerd en duidelijk zichtbaar is. Als content zich buiten het centrale gezichtsveld bevindt, wordt deze mogelijk helemaal niet waargenomen. Een toegankelijke interface houdt rekening met dit beperkte zicht door belangrijke elementen centraal te positioneren, overzichtelijke lay-outs te gebruiken en visuele afleiding te minimaliseren.
+            </p>
+        </div>
     </div>
+
+    <!-- Card 3 -->
+    <div class="info-card">
+        <div class="info-header">
+            <h3>Hoe kan ik mijn website of documenten toegankelijker maken voor mensen met kokervisie?</h3>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="info-content hidden">
+            <p>
+                Zorg ervoor dat essentiële informatie zich in het midden van het scherm bevindt en niet alleen aan de randen. Gebruik voldoende witruimte en duidelijke hiërarchie in je ontwerp. Beperk het aantal bewegende elementen of animaties die buiten het centrale zicht vallen. Gebruik duidelijke navigatie en vermijd complexe layouts die veel zijwaartse interactie vereisen. Vergroot eventueel tekst en knoppen voor betere zichtbaarheid.
+            </p>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="info-card">
+        <div class="info-header">
+            <h3>Welke hulpmiddelen en technologieën zijn beschikbaar voor mensen met kokervisie?</h3>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="info-content hidden">
+            <p>
+                Er zijn hulpmiddelen zoals vergrotende beeldschermsoftware en digitale loepen die helpen bij het vergroten van centrale inhoud. Sommige brillen of visuele hulpmiddelen helpen om het beperkte gezichtsveld te compenseren. Spraakgestuurde assistenten en schermlezers kunnen ook ondersteuning bieden, zodat minder afhankelijkheid van visueel overzicht nodig is. Daarnaast zijn er apps die contrast en lettergrootte aanpassen voor beter zicht.
+            </p>
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="button-container">
+    <a href="station2.html" class="next-button">Volgende</a>
+  </div>
+  
+  </div> 
+
+  
+
 
     <!-- Canvas voor kokervisie -->
     <canvas id="tunnelVisionCanvas"></canvas>

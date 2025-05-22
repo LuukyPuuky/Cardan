@@ -139,3 +139,28 @@ function showTunnelVisionPopup(type, message) {
     popup.remove();
   });
 }
+
+// Info card toggle functionality
+        document.querySelectorAll('.info-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const card = this.parentElement;
+                const content = card.querySelector('.info-content');
+                const arrow = this.querySelector('.arrow');
+                const isExpanded = card.classList.contains('expanded');
+                
+                // Close all other cards
+                document.querySelectorAll('.info-card').forEach(otherCard => {
+                    otherCard.classList.remove('expanded');
+                    otherCard.querySelector('.info-content').classList.add('hidden');
+                    otherCard.querySelector('.arrow').textContent = '▼';
+                });
+                
+                // Toggle current card
+                if (!isExpanded) {
+                    card.classList.add('expanded');
+                    content.classList.remove('hidden');
+                    arrow.textContent = '▲';
+                }
+            });
+        });
+
